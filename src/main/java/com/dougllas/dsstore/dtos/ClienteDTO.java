@@ -10,10 +10,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ClienteDTO {
 
+    private Long id;
     private String nome;
     private String cpf;
 
     public ClienteDTO(Cliente cliente){
+        id = cliente.getId();
         nome = cliente.getNome();
         cpf = cliente.getCpf();
     }
@@ -25,6 +27,7 @@ public class ClienteDTO {
     }
 
     public void copyDtoToEntity(Cliente entity){
+        entity.setId(id);
         entity.setNome(nome);
         entity.setCpf(cpf);
     }
