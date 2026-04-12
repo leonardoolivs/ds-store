@@ -11,7 +11,6 @@ import java.time.Instant;
 
 @Entity
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "TB_ITEM_PEDIDO")
@@ -28,5 +27,8 @@ public class ItemPorPedido {
     @ManyToOne
     @JoinColumn(name = "produto_id")
     private Produto produto;
+
+    @Column(name = "quantidade")
+    private Integer quantidade;
 
 }

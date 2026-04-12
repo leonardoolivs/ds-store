@@ -13,7 +13,6 @@ import java.util.List;
 
 @Entity
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "TB_PEDIDO")
@@ -34,7 +33,12 @@ public class Pedido {
     @Column(name = "data_pedido")
     private Instant dataPedido;
 
-    @OneToMany(mappedBy = "pedido")
+    @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL)
     private List<ItemPorPedido> itemPorPedido = new ArrayList<>();
+
+    public void addItem(ItemPorPedido item) {
+        itemPorPedido.add(item);
+        item.setPedido(this);
+    }
 
 }
