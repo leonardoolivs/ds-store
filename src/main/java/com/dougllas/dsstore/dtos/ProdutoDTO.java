@@ -1,6 +1,7 @@
 package com.dougllas.dsstore.dtos;
 
 import com.dougllas.dsstore.models.Produto;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,7 +14,9 @@ import java.math.BigDecimal;
 public class ProdutoDTO {
 
     private Long id;
+    @NotBlank
     private String nome;
+    @NotBlank
     private BigDecimal preco;
 
     public ProdutoDTO(Produto produto){

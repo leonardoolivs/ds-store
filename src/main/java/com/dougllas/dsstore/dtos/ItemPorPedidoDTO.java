@@ -13,12 +13,10 @@ import java.math.BigDecimal;
 public class ItemPorPedidoDTO {
 
     private Long produtoId;
-    private String nome;
     private Integer quantidade;
     private BigDecimal preco;
 
     public ItemPorPedidoDTO(ItemPorPedido itemPorPedido){
-        nome = itemPorPedido.getProduto().getNome();
         quantidade = itemPorPedido.getQuantidade();
         preco = itemPorPedido.getProduto().getPreco();
     }

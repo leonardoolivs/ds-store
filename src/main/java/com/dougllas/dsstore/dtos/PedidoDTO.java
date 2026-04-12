@@ -4,6 +4,7 @@ import com.dougllas.dsstore.enums.Status;
 import com.dougllas.dsstore.models.ItemPorPedido;
 import com.dougllas.dsstore.models.Pedido;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,6 +21,7 @@ import java.util.List;
 public class PedidoDTO {
 
     private Long id;
+    @NotBlank
     private Long clienteId;
     private BigDecimal total;
     private Instant dataPedido;

@@ -1,9 +1,11 @@
 package com.dougllas.dsstore.dtos;
 
 import com.dougllas.dsstore.models.Cliente;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.br.CPF;
 
 @Getter
 @NoArgsConstructor
@@ -11,7 +13,9 @@ import lombok.NoArgsConstructor;
 public class ClienteDTO {
 
     private Long id;
+    @NotBlank
     private String nome;
+    @CPF
     private String cpf;
 
     public ClienteDTO(Cliente cliente){
