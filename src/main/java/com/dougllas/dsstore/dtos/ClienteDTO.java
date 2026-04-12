@@ -13,9 +13,9 @@ import org.hibernate.validator.constraints.br.CPF;
 public class ClienteDTO {
 
     private Long id;
-    @NotBlank
+    @NotBlank(message = "{nome.obrigatorio}")
     private String nome;
-    @CPF
+    @CPF(message = "{cpf.invalido}")
     private String cpf;
 
     public ClienteDTO(Cliente cliente){
